@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self-Healing Linux Server</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <div>
+      <p class="eyebrow">LINUX SERVER AUTOMATION</p>
+      <h1>Self-Healing Server</h1>
+      <p class="subtitle">Monitor → Detect → Recover → Verify</p>
+    </div>
+    <div id="overall" class="badge">CHECKING...</div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h2>Server Health Dashboard</h2>
+      <p>Live status of the monitored Linux service and system resources.</p>
+    </div>
+    <button onclick="refreshData()">Refresh</button>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <span>CPU Usage</span><strong id="cpu">--</strong><small>%</small>
+      <div class="bar"><i id="cpuBar"></i></div>
+    </div>
+    <div class="card">
+      <span>Memory Usage</span><strong id="memory">--</strong><small>%</small>
+      <div class="bar"><i id="memBar"></i></div>
+    </div>
+    <div class="card">
+      <span>Disk Usage</span><strong id="disk">--</strong><small>%</small>
+      <div class="bar"><i id="diskBar"></i></div>
+    </div>
+    <div class="card">
+      <span>Monitored Service</span><strong id="service">--</strong><small id="serviceState">--</small>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <div><h2>Self-Healing Control</h2><p>For classroom demonstration only.</p></div>
+      <div class="actions">
+        <button class="danger" onclick="demoFailure()">Simulate Failure</button>
+        <button class="success" onclick="recover()">Recover Service</button>
+      </div>
+    </div>
+    <div id="message" class="message">System ready.</div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><div><h2>Healing Activity Log</h2><p>Latest monitoring and recovery events.</p></div></div>
+    <div id="logs" class="logs"></div>
+  </section>
+
+  <footer>Self-Healing Linux Server • Academic Project Demo</footer>
+</div>
+<script src="/static/app.js"></script>
+</body>
+</html>
